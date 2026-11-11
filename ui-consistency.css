@@ -1,0 +1,95 @@
+/* Shared type and spacing for the ENECO site. */
+:root {
+  --ui-font: Inter, Arial, sans-serif;
+  --ui-page-title: clamp(40px, 5.3vw, 70px);
+  --ui-section-title: clamp(32px, 4.15vw, 52px);
+  --ui-card-title: clamp(20px, 2.1vw, 28px);
+  --ui-body: clamp(15px, 1.25vw, 17px);
+  --ui-gutter: clamp(22px, 5.5vw, 96px);
+  --ui-section-space: clamp(48px, 6.25vw, 80px);
+}
+html body, html body :is(h1,h2,h3,h4,p,a,button,label,input,select,textarea,legend,th,td),
+html body :is(.btn_label,.library-card-title,.global-eyebrow,.credential-step-number) {
+  font-family: var(--ui-font) !important;
+}
+html body #main #page-title {
+  font-size: var(--ui-page-title) !important;
+  font-weight: 700 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -.045em !important;
+  overflow-wrap: anywhere;
+}
+html body #main :is(.section-heading,.credentials-heading,.global-copy h2,.trading-reach h2,
+  .who-we-are-copy h2,.quality-approach-statement,.supply-cta h2,
+  #overview-heading,#specifications-heading,#delivery-heading,#enquiry-heading,#related-heading) {
+  font-size: var(--ui-section-title) !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.04em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+html body :is(.hero-lede,.body-large,.who-we-are-copy p,.global-copy > p:not(.global-eyebrow),
+  .trading-reach-copy p,.reference-process-copy article > p:not(.eyebrow)) {
+  font-size: var(--ui-body) !important;
+  line-height: 1.55 !important;
+  white-space: normal !important;
+}
+html body #main :is(.directory-card h3,.library-card-title,.logistics-option-grid h3) {
+  font-size: var(--ui-card-title) !important;
+  line-height: 1.15 !important;
+}
+html body #main :is(.who-we-are-intro,.products-directory,.logistics-options,
+  .technical-library,.product-documents,.quality-approach,.trading-reach) {
+  padding-inline: var(--ui-gutter);
+}
+/* The homepage's regular content rhythm applies to equivalent sections. */
+html body .about-eneco#about-eneco,
+html body :is(.trading-next,.quality-section,.insights-section),
+html body #main :is(.who-we-are-intro,.products-directory,.logistics-role,.logistics-options,
+  .technical-library,.product-documents,.quality-approach,.markets-supply,
+  .product-detail-section,.product-enquiry,.related-products,.article-start) {
+  padding-block: var(--ui-section-space) !important;
+}
+html body #main :is(.trading-reach,.markets-global-presence) {
+  padding-block-start: var(--ui-section-space);
+}
+html body #main .markets-global-presence {
+  padding-block-end: var(--ui-section-space);
+}
+html body #main .credentials-track:not(.is-scroll-driven) > .quality-credentials {
+  padding-block: var(--ui-section-space);
+}
+html body #main .quote-layout { padding-block-end: var(--ui-section-space); }
+html body #main .about-hero:not(.request-hero) { padding-block-end: var(--ui-section-space) !important; }
+html body #main .supply-cta h2 { max-width: 22ch; }
+html body.request-quote-page #main #page-title { font-size: clamp(36px, 4.35vw, 68px) !important; }
+html body #main .logistics-process-head .section-heading :is(span,strong) { white-space: normal; }
+html body :is(a,button,input,select,textarea):focus-visible {
+  outline: 2px solid #c99635;
+  outline-offset: 3px;
+}
+
+/* The homepage and journey use named sections outside the inner-page main. */
+html body.theme-day :is(#aboutTitle,#tradingTitle,#globalTitle,#qualityTitle,#insightsTitle,#supplyCtaTitle),
+html body.theme-night :is(#aboutTitle,#tradingTitle,#globalTitle,#qualityTitle,#insightsTitle,#supplyCtaTitle),
+html body.news-page #main #insightsTitle {
+  font-size: var(--ui-section-title) !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.04em !important;
+}
+html body.news-detail-page .article-longform section h2::after {
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.15;
+}
+
+/* The section following a hero image supplies the gap on its own. */
+html body #main .about-hero:has(> .about-hero-banner) {
+  padding-block-end: 0 !important;
+}
+
+/* Give the inset Markets hero image room before the full-width blue section. */
+html body #main .about-hero.markets-hero:has(> .about-hero-banner) {
+  padding-block-end: clamp(24px, 3vw, 48px) !important;
+}
